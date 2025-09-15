@@ -6,6 +6,7 @@ body {
   color: #fff;
 }
 
+/* ================= Header ================= */
 .container {
   display: flex;
   justify-content: space-between;
@@ -16,7 +17,8 @@ body {
 
 .logo img {
   width: 50px;
-  border-radius: 50%;
+  height: 50px;
+  border-radius: 50%; /* يخلي اللوجو دائري */
   object-fit: cover;
 }
 
@@ -38,6 +40,7 @@ body {
   font-weight: bold;
 }
 
+/* ================= Main Section ================= */
 .main-content {
   padding: 40px 20px;
   text-align: center;
@@ -81,6 +84,11 @@ body {
 
 .social-icons img {
   width: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
 }
 
 .buttons a {
@@ -102,17 +110,20 @@ body {
   color: #f5c45e;
 }
 
-.contact-button:hover, .contact-button2:hover {
+.contact-button:hover, 
+.contact-button2:hover {
   background-color: #ffc107;
   color: #111;
 }
 
+/* ================= Home Section ================= */
 .home {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 60px 8%;
   gap: 40px;
+  flex-wrap: wrap; /* عشان الموبايل */
 }
 
 .content {
@@ -123,6 +134,7 @@ body {
   gap: 20px;
 }
 
+/* ================= Profile Picture ================= */
 .profile-pic {
   flex: 0 0 250px;
   display: flex;
@@ -134,35 +146,20 @@ body {
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  filter: grayscale(20%) brightness(1.1) contrast(1.1);
-  transform: 0.4s ease;
+  box-shadow: 0 0 20px rgba(255,255,255,0.8), 
+              0 0 40px rgba(255,255,255,0.5),
+              0 0 60px rgba(255,255,255,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.profile-pic img:hover{
-  filter: grayscale(0%) brightness(1.2) contrast(1.2);
+
+.profile-pic img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,1),
+              0 0 50px rgba(255,255,255,0.7),
+              0 0 70px rgba(255,255,255,0.5);
 }
 
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icons img {
-  width: 35px;
-  height: 35px;
-  transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-}
-
-.buttons {
-  margin-top: 15px;
-}
-
+/* ================= Carousel ================= */
 .carousel {
   display: flex;
   flex-wrap: wrap;
@@ -210,10 +207,11 @@ body {
   background-color: #ffc107;
 }
 
+/* ================= Skills ================= */
 .skills {
   width: 60%;
   margin: 30px auto;
-  color:  #f5c45e;
+  color: #fff;
 }
 
 .skill {
@@ -240,6 +238,7 @@ body {
   border-radius: 20px;
 }
 
+/* ================= Contact ================= */
 .main-content {
   text-align: center;
   color: #fff;
@@ -283,73 +282,26 @@ body {
   background: #e67e22;
 }
 
-/* --- Responsive Design --- */
-
-/* للشاشات الصغيرة لحد 768px (موبايل) */
+/* ================= Responsive ================= */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
   .home {
     flex-direction: column;
-    padding: 30px 5%;
-    gap: 20px;
+    text-align: center;
   }
 
   .content {
     max-width: 100%;
-    text-align: center;
-  }
-
-  .profile-pic {
-    flex: unset;
   }
 
   .profile-pic img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
   }
 
-  .skills {
-    width: 90%;
-  }
-
-  .carousel {
+  .navbar ul {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .carousel-item {
-    width: 90%;
-  }
-}
-
-/* للشاشات المتوسطة لحد 1024px (تابلت) */
-@media (max-width: 1024px) {
-  .home {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .content {
-    max-width: 80%;
-  }
-
-  .profile-pic img {
-    width: 250px;
-    height: 250px;
-  }
-
-  .carousel-item {
-    width: 45%;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
   }
 }
